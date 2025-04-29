@@ -15,21 +15,22 @@ console.log(tasksObj);
 console.log("\n");
 
 //Add a news tasks like "Start working on the code", "Push the code to the repository" in the array.
-let taskArr = taskModule.addTask(tasks, ["Start working on the code", "Push the code to the repository"]);
-console.log(taskArr);
+console.log(taskModule.addTask(tasks, "Start working on the code"));
+console.log(taskModule.addTask(tasks, "Push the code to the repository"));
+
 
 //Display the list of tasks stored in thne array.
-let listTask = taskModule.listTasks(taskArr);
+let listTask = taskModule.listTasks(tasks);
 
 //update the tasks.json file with the newly added task.
-console.log(fileModule.saveTasks('tasks.json', taskArr));
+console.log(fileModule.saveTasks('tasks.json', tasks));
 
 tasksObj = fileModule.loadTasks('tasks.json');
 console.log(tasksObj);
 console.log("\n");
 
 /*Output:
-    The file tasks.json is created.
+   The file tasks.json is updated.
 The contents are:
 [
   'Create a new repository',
@@ -38,6 +39,8 @@ The contents are:
 ]
 
 
+The tasks are added to the list.
+[ 'Start working on the code' ]
 The tasks are added to the list.
 [ 'Start working on the code', 'Push the code to the repository' ]
 Task-List:

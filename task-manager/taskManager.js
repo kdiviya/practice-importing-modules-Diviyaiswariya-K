@@ -1,7 +1,7 @@
 //Add a new task to the array tasks.
 
 function addTask(tasks,task) {
-    tasks = task;
+    tasks.push(task);
     console.log(`The tasks are added to the list.`);
     return tasks;
 
